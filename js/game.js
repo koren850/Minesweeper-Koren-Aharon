@@ -280,6 +280,7 @@ function safe(elBtn) {
     var elCell = document.querySelector(`.cell${randSafe.i}${randSafe.j}`)
     elCell.classList.add('shown')
     elCell.innerText = gBoard[randSafe.i][randSafe.j].minesAroundCount;
+    if (gBoard[randSafe.i][randSafe.j].minesAroundCount === 0) elCell.innerText = '';
 }
 
 function createMineField7BOOM() {

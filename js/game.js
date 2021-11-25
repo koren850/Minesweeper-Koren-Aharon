@@ -269,8 +269,8 @@ function clearAllHinted(arr) {
         gBoard[cellPos.i][cellPos.j].isShown = false;
         var elCell = document.querySelector(`.cell${cellPos.i}${cellPos.j}`);
         elCell.classList.remove('hint-active')
-        if (gBoard[cellPos.i][cellPos.j]) elCell.innerText = MINE;
-        elCell.innerText = '';
+        if (elCell.classList.contains('mine')) elCell.innerText = MINE;
+        else elCell.innerText = '';
     }
     document.querySelector('.hinted').classList.toggle('hinted')
 }

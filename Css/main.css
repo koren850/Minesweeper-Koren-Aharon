@@ -1,7 +1,10 @@
 body{
     text-align: center;
-    background-image: url("/img/backround.png")
-    
+    background-image: url("../img/backround.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 
 table{
@@ -87,6 +90,7 @@ button{
     border-color: #015705;
     border-radius: 20px;
 }
+
 
 .modal {
     position: fixed;

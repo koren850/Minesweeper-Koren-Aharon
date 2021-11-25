@@ -156,7 +156,10 @@ function cellClicked(elCell, i, j) {
     gBoard[i][j].isShown = true;
     elCell.classList.add('shown');
     elCell.innerText = gBoard[i][j].minesAroundCount;
-    if (gBoard[i][j].minesAroundCount === 0) showAllAround0({ i: i, j: j })
+    if (gBoard[i][j].minesAroundCount === 0) {
+        showAllAround0({ i: i, j: j })
+        elCell.innerText = '';
+    }
     gGame.shownCount++;
     checkGameOver();
     undoArr.push(gBoard);

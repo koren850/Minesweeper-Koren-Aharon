@@ -114,6 +114,7 @@ function showAllAround0(pos) {
             }
             curr0neg.classList.add('shown');
             curr0neg.innerText = gBoard[i][j].minesAroundCount;
+            if (gBoard[i][j].minesAroundCount === 0) curr0neg.innerText = '';
             // undoArr.push(gBoard);
             // undoPos.push({ i: i, j: j });
         }

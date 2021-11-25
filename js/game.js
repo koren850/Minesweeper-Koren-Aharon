@@ -137,6 +137,8 @@ function cellClicked(elCell, i, j) {
     // if (gBoard[i][j].isShown) return;
     else if (gBoard[i][j].isMine) {
         if (elCell.classList.contains('mine')) return;
+        var audio = new Audio('sound/mine.mp3');
+        audio.play();
         gGame.life--;
         document.querySelector('.life').innerText = `life: ${gGame.life}`
         elCell.classList.add('mine')
@@ -145,6 +147,8 @@ function cellClicked(elCell, i, j) {
             elSmiley.innerText = LOSE;
             showAllMines();
             clearInterval(gTimerInterval);
+            var audio = new Audio('sound/lose.mp3');
+            audio.play();
             gGame.isOn = false;
             document.querySelector('.model_content').innerText = 'You Lose';
             openModal();
@@ -210,6 +214,8 @@ function flag(elCell, i, j) {
 function checkGameOver() {
     if (gGame.MineCount === 0 && gGame.shownCount === (gBoard.length * gBoard[0].length - gMineCount)) {
         clearInterval(gTimerInterval);
+        var audio = new Audio('sound/win.mp3');
+        audio.play();
         gGame.isOn = false;
         elSmiley.innerText = WIN;
         document.querySelector('.model_content').innerText = 'You win'

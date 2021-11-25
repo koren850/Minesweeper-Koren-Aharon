@@ -87,6 +87,10 @@ button{
     border-color: #015705;
     border-radius: 20px;
 }
+button:hover{
+        background: rgb(0,120,0);
+        background: linear-gradient(90deg, rgb(4, 155, 175) 0%, rgb(31, 181, 88) 15%, rgba(27,235,152,1) 50%, rgb(31, 181, 136) 85%, rgb(0, 120, 110) 100%);
+}
 
 .modal {
     position: fixed;

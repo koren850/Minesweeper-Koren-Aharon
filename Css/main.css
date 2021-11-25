@@ -1,0 +1,116 @@
+body{
+    text-align: center;
+    background-image: url("/img/backround.png")
+    
+}
+
+table{
+    margin: auto;
+}
+td{
+     background: rgb(4,235,37);
+    background: linear-gradient(180deg, rgba(4,235,37,0.9360119047619048) 0%, rgba(8,61,8,1) 50%, rgba(176,182,11,1) 100%);
+    cursor: pointer;
+    color: #1d3b5f;
+    display:inline-block;
+    box-sizing: border-box;
+    margin: 1px;
+    height: 60px;
+    width: 60px;
+    font-size: 35px;
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 2px 2px 2px rgba(206,89,55,0);
+    font-weight: bold;
+    border: 0px solid;
+    border-radius: 50%;
+    border-color: rgb(10, 88, 36);
+    /* border-image: linear-gradient(45deg, turquoise, greenyellow) 1; */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    /* border-radius:50px; */
+    
+}
+.mine{    
+    background: radial-gradient(circle, rgba(122,118,210,0.9360119047619048) 0%, rgba(112,115,134,1) 40%, rgba(198,43,43,0.8995973389355743) 68%);
+}
+
+.shown{
+    background: rgb(122,118,210);
+    background: radial-gradient(circle, rgba(79, 185, 75, 0.936) 0%, rgb(68, 122, 85) 58%, rgba(58,210,76,0.8995973389355743) 84%);
+}
+.stats{
+    margin-top: 10px;
+}
+
+.smiley{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0B4619;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #49ff18, 0 0 40px #49FF18, 2px 2px 2px rgba(206,89,55,0);
+}
+.timer{
+    margin-left: 20px;
+}
+.timer , .life{
+        display: inline-block;
+        font-size: 40px;
+        font-weight: bold;
+        color: #0B4619;
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #49ff18, 0 0 40px #49FF18, 2px 2px 2px rgba(206,89,55,0);
+}
+
+.hinted{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.hint-active{
+    background: rgb(118,210,155);
+    background: radial-gradient(circle, rgba(118,210,155,0.9360119047619048) 0%, rgba(73,150,159,1) 38%, rgba(21,228,226,0.8995973389355743) 68%);
+}
+
+button{
+    cursor: pointer;
+    color: black;
+    -webkit-text-fill-color: #49FF00; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1.3px;
+    -webkit-text-stroke-color: black;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    background: rgb(0,120,0);
+    background: linear-gradient(90deg, rgba(0,120,0,1) 0%, rgba(173,181,31,1) 15%, rgba(27,235,152,1) 50%, rgba(173,181,31,1) 85%, rgba(0,120,0,1) 100%);
+    border-width: 3px;
+    border-style: double;
+    border-color: #015705;
+    border-radius: 20px;
+}
+
+.modal {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(4,235,37);
+    background: linear-gradient(180deg, rgba(4,235,37,0.8) 0%, rgba(8,61,8,0.8) 50%, rgba(176,182,11,0.8) 100%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    line-height: 130px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 90px;
+    box-sizing: border-box;
+    letter-spacing: 7px;
+    border-radius: 50%;
+    color: #B2EA70;
+    text-shadow: #FFF 0px 0px 5px, rgb(78, 131, 67) 0px 0px 10px, #FFF 0px 0px 15px, #2dff6c 0px 0px 30px, #2dff84 0px 0px 50px, 0px 0px 0px rgba(218, 181, 17, 0);
+    /* display: none; */
+}
+
+.hidden {
+  display: none;
+}

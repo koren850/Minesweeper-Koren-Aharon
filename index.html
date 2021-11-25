@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/main.css">
+</head>
+<body oncontextmenu="return false;" onload="init()">
+    <button onclick="createMineField(4,4,2)">Beginner</button>
+    <button onclick="createMineField(8,8,12)">Medium</button>
+    <button onclick="createMineField(12,12,30)" >Expert</button>
+    <button onclick="createMineField7BOOM()" >7 BOOM</button>
+    <div class="stats"><div class="life">life: 3</div> <div class=timer> Timer:<span id="mins">0</span> <span id="seconds">00</span> </div></div>
+    <div onclick="restart()" class="smiley"></div>
+    <table>
+        <tbody></tbody>
+    </table>
+    <button class="undo" onclick="undo()">Undo</button>
+    <button class="hint" onclick="hint(this)">3 hints</button>
+    <button class="safe" onclick="safe(this)">3 safe clicks</button>
+        <div class="modal hidden"><span class="model_content">win/lose</span></div>
+    <script src="js/util.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

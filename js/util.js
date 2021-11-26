@@ -41,7 +41,7 @@ function renderMat(mat, selector) {
         strHTML += '<tr>';
         for (var j = 0; j < mat[0].length; j++) {
             var cellContent = mat[i][j].isShown ? mat[i][j].minesAroundCount : ' ';
-            var className = `cell cell${i}${j}`;
+            var className = `cell cell${i}-${j}`;
             strHTML += `<td oncontextmenu="flag(this,${i},${j})" onclick="cellClicked(this,${i},${j})" class="${className}"> ${cellContent}</td>`
         }
         strHTML += '</tr>'
@@ -102,15 +102,12 @@ function showAllAround0(pos) {
         for (var j = pos.j - 1; j <= pos.j + 1; j++) {
             if (j < 0 || j >= gBoard[i].length) continue;
             if (i === pos.i && j === pos.j) continue;
-            gBoard[i][j].isShown = true
-            var curr0neg = document.querySelector(`.cell${i}${j}`)
+            gBoard[i][j].isShown = true;
+            var curr0neg = document.querySelector(`.cell${i}-${j}`);
             if (!curr0neg.classList.contains('shown')) {
                 gGame.shownCount++
                 undoArr.push(gBoard);
                 undoPos.push({ i: i, j: j });
-            }
-            else {
-
             }
             curr0neg.classList.add('shown');
             curr0neg.innerText = gBoard[i][j].minesAroundCount;
@@ -179,8 +176,8 @@ function openModal() {
     var elModal = document.querySelector('.modal');
     elModal.style.display = 'block';
 
-    var elText = elModal.querySelector('p');
-    elText.innerText = isVictory ? 'You won!!! 🏆' : 'You lost! Let\'s try angin ';
+    // var elText = elModal.querySelector('p');
+    // elText.innerText = isVictory ? 'You won!!! 🏆' : 'You lost! Let\'s try angin ';
 }
 
 // usually activeted by a button in the modal

@@ -144,6 +144,7 @@ function cellClicked(elCell, i, j) {
         elCell.classList.add('mine')
         elCell.innerText = MINE;
         if (gGame.life === 0) {
+            debugger;
             elSmiley.innerText = LOSE;
             showAllMines();
             clearInterval(gTimerInterval);
@@ -227,7 +228,7 @@ function showAllMines() {
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
             if (gBoard[i][j].isMine) {
-                var currMine = document.querySelector(`.cell${i}${j}`);
+                var currMine = document.querySelector(`.cell${i}-${j}`);
                 currMine.classList.add('mine')
                 currMine.innerText = MINE;
             }
@@ -254,7 +255,7 @@ function nextMoveHint(pos) {
             if (gBoard[i][j].isMarked) continue;
             revaled.push({ i: i, j: j });
             gBoard[i][j].isShown = true;
-            var currCell = document.querySelector(`.cell${i}${j}`);
+            var currCell = document.querySelector(`.cell${i}-${j}`);
             currCell.classList.add('hint-active');
             if (gBoard[i][j].isMine) currCell.innerText = MINE;
             else currCell.innerText = gBoard[i][j].minesAroundCount;
@@ -267,7 +268,7 @@ function clearAllHinted(arr) {
     for (var i = 0; i < arr.length; i++) {
         var cellPos = { i: arr[i].i, j: arr[i].j }
         gBoard[cellPos.i][cellPos.j].isShown = false;
-        var elCell = document.querySelector(`.cell${cellPos.i}${cellPos.j}`);
+        var elCell = document.querySelector(`.cell${cellPos.i}-${cellPos.j}`);
         elCell.classList.remove('hint-active')
         if (elCell.classList.contains('mine')) elCell.innerText = MINE;
         else elCell.innerText = '';
@@ -283,7 +284,7 @@ function safe(elBtn) {
     var randSafe = getRandomEmpty();
     gBoard[randSafe.i][randSafe.j].isShown = true;
     gGame.shownCount++;
-    var elCell = document.querySelector(`.cell${randSafe.i}${randSafe.j}`)
+    var elCell = document.querySelector(`.cell${randSafe.i}-${randSafe.j}`);
     elCell.classList.add('shown')
     elCell.innerText = gBoard[randSafe.i][randSafe.j].minesAroundCount;
     if (gBoard[randSafe.i][randSafe.j].minesAroundCount === 0) elCell.innerText = '';
